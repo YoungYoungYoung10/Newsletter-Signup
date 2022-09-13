@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Failure</title>
+    <!-- BootStrap SylteSheet!!! -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <div class="container py-4">
+          <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">Uh Oh!</h1>
+              <p class="col-md-8 fs-4">There was a problem signing you up. Please try again or contact the developer!</p>
+              <!-- 
+              当我们按下这个button时，会trigger一个POST请求to the "/failure" route,
+              然后会被app.js中的app.post("/failure",function(req,res){})捕捉到，
+              并通过res.redirect把用户送回到主页面
+              -->
+              <form action="/failure" method="post">
+                <button class="btn btn-lg btn-warning" type="submit">Try Again</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </main>
+</body>
+</html>
